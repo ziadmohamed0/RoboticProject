@@ -13,12 +13,15 @@ MPU6050 mpu;
 
 #define IR_PIN D5
 
+#define SDA_PIN D1  
+#define SCL_PIN D2  
+
 #define SERVOMIN  150  
 #define SERVOMAX  600  
 
 void setup() {
   Serial.begin(115200);
-  Wire.begin();
+  Wire.begin(SDA_PIN, SCL_PIN); 
 
   pca.begin();
   pca.setPWMFreq(50);
